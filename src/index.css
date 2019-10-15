@@ -1,13 +1,332 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  width: 100%;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+.background {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: url('https://c.wallhere.com/photos/72/eb/bridge_river_California_Golden_Gate_Bridge_plants_San_Francisco-1660073.jpg!d') no-repeat top center/cover;
+  
+  /* background: -webkit-linear-gradient(left, rgb(207, 7, 53) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); */
+  /* opacity: .8; */
+  z-index: -1;
+}
+a{text-decoration: none;}
+
+.copy {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  margin-top: rem;
+}
+
+.burguer-menu {
+  width: 40px;
+  height:30px;
+  padding-top: 1rem;
+  margin: 0 1rem 1rem 1rem;
+  cursor: pointer;
+  display: none;
+}
+
+.burguer-menu  div {
+  background: #000;
+  width: 100%;
+  height: 7px;
+  margin-bottom: 5px;
+  z-index: 150;
+}
+/**
+ * Header component
+ */
+
+.header {
+  width: 20%;
+  height: 100vh;
+  background: #0b2f3aab;
+  position: fixed;
+}
+
+.category{
+  width: 80%;
+  margin: auto;
+}
+.btn {
+  width: 100%;
+  display: block;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  outline: none;
+  padding: 10px 20px;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.active {
+  color: #000;
+  background: #eeee;
+  border: none;
+}
+
+/**
+ * ListNews Component
+ */
+.news {
+  width: 80%;
+  height: auto;
+  position: absolute;
+  left: 20%;
+  /* border: 1px solid #000; */
+  overflow: hidden;
+  margin-top: 3rem;
+}
+
+h1.title {
+  /* box-sizing: border-box; */
+  /* width: 90%; */
+  padding: 1.5rem 0;
+  color: #fff;
+  border-bottom:  5px solid #eee;
+  /* background: #fff; */
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.new {
+  width: 90%;
+  margin: 0 auto;
+  /* background: rgba(255, 255, 255, 0.815); */
+  /* padding: 2rem; */
+  margin-bottom: 2rem;
+  box-shadow: -5px 5px 10px rgba(0,0,0,.7);
+
+}
+.new .a {
+  display: flex;
+  text-decoration: none;
+}
+
+.new .a .img {
+  width: 350px;
+  /* height: 100%; */
+  /* background-size: contain; */
+}
+
+.new .new-info {
+  width: 100%;
+  padding: 1.5rem 1.5rem;
+  background: #eee;
+  box-sizing: border-box;
+}
+
+.new .new-title {
+  border-bottom: 2px solid #05525c;
+  color: #222;
+  text-transform: uppercase;
+  text-align: center;
+  /* margin: 1rem; */
+  font-size: 18px;
+  padding-bottom: .5rem;
+}
+
+small {
+  display: block;
+  float: left;
+  font-size: 12px;
+  color: #6d040b;
+  margin: 1rem;
+}
+
+.description {
+  color: #333;
+  font-size: 13px;
+  line-height: 1.7rem;
+  margin: 1rem;
+  letter-spacing: 1px;
+}
+
+.date {
+  color: #888;
+  text-align: right;
+  font-size: 12px;
+  margin: 1rem;
+}
+
+.url {
+  /* display: inline-block; */
+  background: #05525c;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  text-align: center;
+
+}
+.url:hover, .btn:hover {
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1rem;
+}
+
+.social-media a img {
+  width: 30px;
+  margin-left: 30px;
+}
+
+
+
+img:hover{
+  transform:scale(1.02);
+  transition: transform 500ms ease-in-out;
+}
+
+@media only screen and (max-width: 960px) {
+  .header {
+    width: 100%;
+    z-index: 100;
+    position: initial;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-size: 16px;
+    padding: 0;
+    margin-bottom: 10px; 
+  }
+  .category {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  .btn {
+    width: 100%;
+    font-size: 14px;
+    margin: 0;
+  }
+  h1.title {
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+    background: #222;
+  }
+
+  .news {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+  }
+  .new .a {
+    display: block;
+  }
+
+  .new .a .img {
+    width: 100%;
+  }
+  .burguer-menu {
+    display: block;
+  }
+  .menu {
+    display: block;
+
+  }
+}
+
+.loading {
+  font-size: 3rem;
+  color: rgb(216, 196, 196);
+  position: absolute;
+  top: 60%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Detail news
+ */
+.detail-new{
+  position: absolute;
+  width: 100%;
+  left: 20%;
+
+}
+
+.list-news-footer .news .new {
+  min-width: 200px;
+  width: 500px;
+  font-size: 12px;
+  box-sizing: border-box;
+  margin: 0;
+  right: 0;
+}
+.list-news-footer .news h1,
+.list-news-footer .news .new p,
+.list-news-footer .news .new small {
+  display: none;
+}
+.list-news-footer .news .new h2 {
+  font-size:12px;
+}.list-news-footer .news .new img {
+  width: 250px;
 }
